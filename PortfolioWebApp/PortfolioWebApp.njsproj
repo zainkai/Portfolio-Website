@@ -53,7 +53,6 @@
     <Content Include="Content\images\media_images\linkedin.png" />
     <Content Include="Content\images\profile.jpg" />
     <Content Include="package.json" />
-    <Content Include="README.md" />
     <Content Include="Views\error.html" />
     <Content Include="typings.json" />
     <Content Include="Views\index.html" />
