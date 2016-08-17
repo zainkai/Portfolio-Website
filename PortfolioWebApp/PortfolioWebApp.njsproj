@@ -36,6 +36,10 @@
     <Compile Include="Content\scripts\contactMe.js" />
     <Compile Include="Content\scripts\jquery-2.2.4.js" />
     <Compile Include="Content\scripts\projects.js" />
+    <Compile Include="routes\contact.js" />
+    <Compile Include="routes\media.js" />
+    <Compile Include="routes\projects.js" />
+    <Compile Include="routes\resume.js" />
     <Compile Include="routes\index.js" />
     <Compile Include="bin\www" />
     <Content Include="Content\css\1-col-portfolio.css" />
@@ -53,9 +57,13 @@
     <Content Include="Content\images\media_images\linkedin.png" />
     <Content Include="Content\images\profile.jpg" />
     <Content Include="package.json" />
-    <Content Include="Views\error.html" />
     <Content Include="typings.json" />
+    <Content Include="Views\contactMe.html" />
+    <Content Include="Views\error.html" />
     <Content Include="Views\index.html" />
+    <Content Include="Views\Media.html" />
+    <Content Include="Views\Projects.html" />
+    <Content Include="Views\resume.html" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="bin\" />

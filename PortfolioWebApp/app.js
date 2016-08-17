@@ -6,8 +6,10 @@ var app = express();
 
 //route definitions
 var index = require('./routes/index');
-//var resume =
-//var ...
+var resume = require('./routes/resume');
+var projects = require('./routes/projects');
+var media = require('./routes/media');
+var contact = require('./routes/contact');
 
 
 
@@ -21,7 +23,12 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(express.static(path.join(__dirname, 'Content')));
 
+//website links
 app.use('/', index);
+app.use('/resume', resume);
+app.use('/projects', projects);
+app.use('/media', media);
+app.use('/contactMe', contact);
 
 
 // catch 404 and forward to error handler
@@ -52,6 +59,14 @@ app.use(function (err, req, res, next) {
     res.render('error', {
         message: err.message,
         error: {}
+    });
+});
+
+app.use(function (err, req, res, next) {
+    res.status(err.status || 500);
+    res.render('error', {
+        message: err.message,
+        error: err
     });
 });
 

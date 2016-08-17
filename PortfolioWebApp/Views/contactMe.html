@@ -6,16 +6,16 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="Portfolio website">
-    <meta name="author" content="Kevin Turkington">
+    <meta name="description" content="">
+    <meta name="author" content="">
 
-    <title>About Me</title>
+    <title>Contact Me</title>
 
     <!-- Bootstrap Core CSS -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
 
     <!-- Custom CSS -->
-    <link href="css/one-page-wonder.css" rel="stylesheet">
+    <link href="css/1-col-portfolio.css" rel="stylesheet">
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -50,7 +50,7 @@
                     <li>
                         <a href="projects">Projects</a>
                     </li>
-					<li>
+                    <li>
                         <a href="media">Media</a>
                     </li>
                     <li>
@@ -63,34 +63,68 @@
         <!-- /.container -->
     </nav>
 
-    <!-- Full Width Image Header -->
-    <header class="header-image">
-        <div class="headline">
-            <div class="container">
-                <h1>Kevin Turkington</h1>
-                <h2>Software Developer</h2>
-            </div>
-        </div>
-    </header>
-
     <!-- Page Content -->
     <div class="container">
 
-        <hr class="featurette-divider">
-
-        <!-- First Featurette -->
-        <div class="featurette" id="about">
-            <img class="featurette-image img-circle img-responsive pull-right" style="width:40%" src="images/profile.jpg">
-            <h2 class="featurette-heading">About Me</h2>
-            <p class="lead">Oregon State University computer science student, and student programmer for the Center of Applied Systems and Software.</p>
+        <!-- Page Heading -->
+        <div class="row">
+            <div class="col-lg-12">
+                <h1 class="page-header">Contact Me</h1>
+            </div>
         </div>
+        <!-- /.row -->
+		<div class="col-lg-12" style="padding-bottom:10px">
+			<form role="form">
+				<div class="form-group col-md-5">
+					<label for="email">Email:</label>
+					<input type="email" class="form-control" id="email" required="required" placeholder="Required">
+				</div>
+				<div class="form-group col-md-5">
+					<label for="phone">Phone:</label>
+					<input type="tel" class="form-control" id="phone" placeholder="Optional">
+				</div>
+				<div class="form-group col-md-5">
+					<label for="name">Your Name:</label>
+					<input type="text" class="form-control" id="name" required="required" placeholder="Required">
+				</div>
+				<div class="form-group col-md-5">
+					<label for="company">Your Company:</label>
+					<input type="text" class="form-control" id="company" placeholder="Optional">
+				</div>
+				<div class="form-group col-md-5">
+					<label for="subject">Subject:</label>
+					<input type="text" class="form-control" id="subject" required="required" placeholder="Required">
+				</div>
+				<div class="form-group col-md-5">
+					<label for="website">Website:</label>
+					<input type="text" class="form-control" id="website" placeholder="Optional">
+				</div>
+				<div class="form-group col-lg-10">
+					<label for="message">Your Message:</label>
+					<textarea class="form-control" rows="6" id="message" required="required" placeholder="Required"></textarea>
+				</div>
+				<div class="form-group col-lg-10">
+					<input type="submit" class="form-control" id="submit" style="width:50%; margin:0 auto">
+				</div>
+			</form>
+		</div>
+		
+        <hr>
+		
+		<div class="row">
+			<div class="col-lg-12" style="padding-top:25px; border-top:1px solid #e6e6e6">
+				<h4>Or contact me at:</h4>
+				<a href="mailto:Turkingtonkevin@gmail.com">Email: TurkingtonKevin@gmail.com</a>
+			</div>
+		</div>
         <!-- Footer -->
         <footer>
             <div class="row">
-                <div class="col-lg-12" style="padding-top:9.5px; border-top:1px solid #e6e6e6">
+                <div class="col-lg-12" style="border-top:1px solid #e6e6e6">
                     <p></p>
                 </div>
             </div>
+            <!-- /.row -->
         </footer>
 
     </div>
@@ -101,6 +135,9 @@
 
     <!-- Bootstrap Core JavaScript -->
     <script src="scripts/bootstrap.min.js"></script>
+	
+	<!-- Custom Script -->
+	<script src="scripts/contactMe.js"></script>
 
 </body>
 
