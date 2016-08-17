@@ -7,7 +7,7 @@ var testData = {
             Name: 'Project Name test',
             subHeading:'Subheading test',
             imgLink: ['./images/projects/test/test1.png', './images/projects/test/test2.png', './images/projects/test/test3.png'],
-            Description: 'lorem ispsum',
+            Description: 'lorem ispsum description 1',
             githubLink:'http://www.google.com'
         },
         {

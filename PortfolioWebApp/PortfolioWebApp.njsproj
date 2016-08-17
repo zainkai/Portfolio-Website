@@ -56,6 +56,7 @@
     <Content Include="Content\images\media_images\github.png" />
     <Content Include="Content\images\media_images\linkedin.png" />
     <Content Include="Content\images\profile.jpg" />
+    <Content Include="Content\images\projects\portfolioWebsite\portfolioProjects.PNG" />
     <Content Include="Content\resumePDF\resume.pdf" />
     <Content Include="package.json" />
     <Content Include="typings.json" />
@@ -74,6 +75,7 @@
     <Folder Include="Content\images\media_images\" />
     <Folder Include="Content\css\" />
     <Folder Include="Content\images\projects\" />
+    <Folder Include="Content\images\projects\portfolioWebsite\" />
     <Folder Include="Content\images\projects\test\" />
     <Folder Include="Content\resumePDF\" />
     <Folder Include="Content\scripts\" />
