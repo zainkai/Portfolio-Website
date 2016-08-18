@@ -36,6 +36,7 @@
     <Compile Include="Content\scripts\contactMe.js" />
     <Compile Include="Content\scripts\jquery-2.2.4.js" />
     <Compile Include="Content\scripts\projects.js" />
+    <Compile Include="protected\smtpTransport.js" />
     <Compile Include="routes\contact.js" />
     <Compile Include="routes\media.js" />
     <Compile Include="routes\projects.js" />
@@ -79,19 +80,24 @@
     <Folder Include="Content\images\projects\test\" />
     <Folder Include="Content\resumePDF\" />
     <Folder Include="Content\scripts\" />
+    <Folder Include="protected\" />
     <Folder Include="routes\" />
     <Folder Include="typings\" />
     <Folder Include="typings\globals\" />
     <Folder Include="typings\globals\body-parser\" />
+    <Folder Include="typings\globals\bootstrap\" />
     <Folder Include="typings\globals\cookie-parser\" />
     <Folder Include="typings\globals\debug\" />
     <Folder Include="typings\globals\ejs\" />
     <Folder Include="typings\globals\express-serve-static-core\" />
     <Folder Include="typings\globals\express\" />
     <Folder Include="typings\globals\jade\" />
+    <Folder Include="typings\globals\jquery\" />
     <Folder Include="typings\globals\mime\" />
     <Folder Include="typings\globals\morgan\" />
+    <Folder Include="typings\globals\nodemailer\" />
     <Folder Include="typings\globals\node\" />
+    <Folder Include="typings\globals\qs\" />
     <Folder Include="typings\globals\serve-favicon\" />
     <Folder Include="typings\globals\serve-static\" />
     <Folder Include="typings\globals\stylus\" />
@@ -99,15 +105,19 @@
   </ItemGroup>
   <ItemGroup>
     <TypeScriptCompile Include="typings\globals\body-parser\index.d.ts" />
+    <TypeScriptCompile Include="typings\globals\bootstrap\index.d.ts" />
     <TypeScriptCompile Include="typings\globals\cookie-parser\index.d.ts" />
     <TypeScriptCompile Include="typings\globals\debug\index.d.ts" />
     <TypeScriptCompile Include="typings\globals\ejs\index.d.ts" />
     <TypeScriptCompile Include="typings\globals\express-serve-static-core\index.d.ts" />
     <TypeScriptCompile Include="typings\globals\express\index.d.ts" />
     <TypeScriptCompile Include="typings\globals\jade\index.d.ts" />
+    <TypeScriptCompile Include="typings\globals\jquery\index.d.ts" />
     <TypeScriptCompile Include="typings\globals\mime\index.d.ts" />
     <TypeScriptCompile Include="typings\globals\morgan\index.d.ts" />
+    <TypeScriptCompile Include="typings\globals\nodemailer\index.d.ts" />
     <TypeScriptCompile Include="typings\globals\node\index.d.ts" />
+    <TypeScriptCompile Include="typings\globals\qs\index.d.ts" />
     <TypeScriptCompile Include="typings\globals\serve-favicon\index.d.ts" />
     <TypeScriptCompile Include="typings\globals\serve-static\index.d.ts" />
     <TypeScriptCompile Include="typings\globals\stylus\index.d.ts" />

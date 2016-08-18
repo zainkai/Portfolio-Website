@@ -2,6 +2,7 @@
 var path = require('path');
 var logger = require('morgan');
 var bodyParser = require('body-parser');
+var nodemailer = require('nodemailer');
 var app = express();
 
 //route definitions
@@ -10,6 +11,9 @@ var resume = require('./routes/resume');
 var projects = require('./routes/projects');
 var media = require('./routes/media');
 var contact = require('./routes/contact');
+
+//protected route definitions
+var emailConnection = require('./protected/smtpTransport');
 
 
 

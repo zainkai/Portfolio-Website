@@ -13,6 +13,7 @@
 PortfolioWebApp/obj/Debug
 PortfolioWebApp/node_modules
 PortfolioWebApp/bin
+PortfolioWebApp/protected
 
 # User-specific files (MonoDevelop/Xamarin Studio)
 *.userprefs

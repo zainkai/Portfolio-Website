@@ -10,10 +10,11 @@
     "name": "Mochi-Desktop"
   },
   "dependencies": {
-    "body-parser": "~1.8.1",
+    "body-parser": "^1.15.2",
     "debug": "~2.0.0",
     "ejs": "^2.5.1",
-    "express": "~4.9.0",
-    "morgan": "^1.7.0"
+    "express": "^4.14.0",
+    "morgan": "^1.7.0",
+    "nodemailer": "^2.5.0"
   }
 }
