@@ -3,11 +3,6 @@
  * Date: 7/21/16
  * Description Portfolio website: contactme page script.
 ***********************************************************/
-
-
-
-
-
 function setContacts(obj) {
     var emailVal = $('#email').val();
     var nameVal = $('#name').val();
