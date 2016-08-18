@@ -11,11 +11,14 @@ var resume = require('./routes/resume');
 var projects = require('./routes/projects');
 var media = require('./routes/media');
 var contact = require('./routes/contact');
+var email = require('./routes/email');
+
 
 //protected route definitions
-var emailConnection = require('./protected/smtpTransport');
+var smtpTransport = require('./protected/smtpTransport');
 
-
+//email setup
+app.use('/contactMe', email);
 
 
 // view engine setup

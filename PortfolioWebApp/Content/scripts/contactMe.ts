@@ -1,8 +1,13 @@
-/**********************************************************
+﻿/**********************************************************
  * Author: Kevin Turkington
  * Date: 7/21/16
  * Description Portfolio website: contactme page script.
 ***********************************************************/
+
+
+
+
+
 function setContacts(obj) {
     var emailVal = $('#email').val();
     var nameVal = $('#name').val();
@@ -11,15 +16,18 @@ function setContacts(obj) {
     var messageVal = $('#message').val();
     var companyVal = $('#company').val();
     var websiteVal = $('#website').val();
+
     var requiredIsFilled = (emailVal != "") &&
         (nameVal != "") &&
         (subjectVal != "") &&
         (messageVal != "");
+
     if (requiredIsFilled) {
         obj.email = emailVal;
         obj.name = nameVal;
-        obj.subject = subjectVal;
+        obj.subject = subjectVal
         obj.message = messageVal;
+
         if (phoneVal != "") {
             obj.phone = phoneVal;
         }
@@ -30,7 +38,9 @@ function setContacts(obj) {
             obj.website = websiteVal;
         }
         $('#submit').prop('disabled', true);
+        //add modal popup clarifying that button was pressed
     }
+
 }
 function resetContacts(obj) {
     obj.email = null;
@@ -41,6 +51,7 @@ function resetContacts(obj) {
     obj.subject = null;
     obj.message = null;
 }
+
 $(document).ready(function () {
     var contactObj = {
         email: null,
@@ -50,10 +61,12 @@ $(document).ready(function () {
         website: null,
         subject: null,
         message: null
-    };
+    }
     //var contactdata = new dataObj();
     $('#submit').click(function () {
         setContacts(contactObj);
         console.log(contactObj);
+
     });
+
 });
