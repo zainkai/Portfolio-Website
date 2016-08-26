@@ -19,12 +19,13 @@ var mailOptions = {
 function setupMailOptions(data) {
     mailOptions.subject = data.subject;
     mailOptions.html =
-        '<div><b> Sender Name:</b><p> ' + data.name + '</p> </div>' +
-        '<div><b> Email:</b><p>  ' + data.email + '</p> </div>' +
-        '<div><b> Phone:</b><p> ' + data.phone + '</p></div>' +
-        '<div><b> company:</b><p> ' + data.company + '</p></div>' +
-        '<div><b> website:</b><p> ' + data.website + '</p></div>' +
-        '<div><b> message:</b><p> ' + data.message + '</p></div>';
+        '<div><h2>Someone contacted you!</h2></div>' +
+        '<div><p><b> Sender Name:</b> ' + data.name + '</p> </div>' +
+        '<div><p><b> Email:</b>  ' + data.email + '</p> </div>' +
+        '<div><p><b> Phone:</b> ' + data.phone + '</p></div>' +
+        '<div><p><b> Company:</b> ' + data.company + '</p></div>' +
+        '<div><p><b> Website:</b> ' + data.website + '</p></div>' +
+        '<div><p><b> Message:</b> ' + data.message + '</p></div>';
 }
 
 /* GET home page. */
