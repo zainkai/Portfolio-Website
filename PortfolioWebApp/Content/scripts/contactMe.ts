@@ -70,7 +70,7 @@ class emailController {
                 
             },
             error: function (jqXHR, textStatus, errorThrown) {
-                
+                alert('Error:' + jqXHR + textStatus + errorThrown);
             }
         });
     }

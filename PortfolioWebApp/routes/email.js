@@ -2,7 +2,9 @@
 var nodemailer = require('nodemailer');
 var router = express.Router();
 var email = require('../protected/smtpTransport');
+var bodyParser = require('body-parser');
 var smtpTransport = email.smtpTransport;
+var urlencodedParser = bodyParser.urlencoded({ extended: false });
 
 var mailOptions = {
     from: '"Portfolio server" <turkingk.server@gmail.com>', // sender address 
@@ -17,25 +19,27 @@ var mailOptions = {
 function setupMailOptions(data) {
     mailOptions.subject = data.subject;
     mailOptions.html =
-        '<b> Sender Name:</b><p> ' + data.name + '</p>' +
-        '<b> Email:</b><p>  ' + data.email + '</p>' +
-        '<b> Phone:</b><p> ' + data.phone + '</p>' +
-        '<b> company:</b><p> ' + data.company + '</p>' +
-        '<b> website:</b><p> ' + data.website + '</p>' +
-        '<b> message:</b><p> ' + data.message + '</p>';
+        '<div><b> Sender Name:</b><p> ' + data.name + '</p> </div>' +
+        '<div><b> Email:</b><p>  ' + data.email + '</p> </div>' +
+        '<div><b> Phone:</b><p> ' + data.phone + '</p></div>' +
+        '<div><b> company:</b><p> ' + data.company + '</p></div>' +
+        '<div><b> website:</b><p> ' + data.website + '</p></div>' +
+        '<div><b> message:</b><p> ' + data.message + '</p></div>';
 }
 
 /* GET home page. */
-router.post('/', function (req, res) {
-    console.log(req.body);
-    //setupMailOptions(req.body);
-    //smtpTransport.sendMail(mailOptions, function (error, info) {
-    //    if (error) {
-    //        return console.log(error);
-    //    }
-    //    console.log('Message sent: ' + info.response);
-    //    return console.log(info);
-    //});
+router.post('/', urlencodedParser,function (req, res) {
+    setupMailOptions(req.body);
+    smtpTransport.sendMail(mailOptions, function (error, info) {
+        if (error) {
+            res.sendStatus(500);
+            console.log(error);
+        }
+        else {
+            res.sendStatus(200);
+            console.log('Message sent: ' + info.response);
+        }
+    });
 });
 
 module.exports = router;

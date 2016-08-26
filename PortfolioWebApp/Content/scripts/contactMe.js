@@ -64,6 +64,7 @@ class emailController {
                 $('#submit').prop('disabled', false);
             },
             error: function (jqXHR, textStatus, errorThrown) {
+                alert('Error:' + jqXHR + textStatus + errorThrown);
             }
         });
     }

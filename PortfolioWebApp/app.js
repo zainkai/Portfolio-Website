@@ -26,8 +26,8 @@ app.set('views', path.join(__dirname, 'Views'));
 app.engine('html', require('ejs').renderFile);
 app.set('view engine', 'html');
 app.use(logger('dev'));
-app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({ extended: true }));
+app.use(bodyParser.urlencoded({ extended: false }))
+app.use(bodyParser.json())
 app.use(express.static(path.join(__dirname, 'Content')));
 
 //website links
