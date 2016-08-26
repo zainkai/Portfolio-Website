@@ -3,57 +3,74 @@
  * Date: 7/21/16
  * Description Portfolio website: contactme page script.
 ***********************************************************/
-function setContacts(obj) {
-    var emailVal = $('#email').val();
-    var nameVal = $('#name').val();
-    var subjectVal = $('#subject').val();
-    var phoneVal = $('#phone').val();
-    var messageVal = $('#message').val();
-    var companyVal = $('#company').val();
-    var websiteVal = $('#website').val();
-    var requiredIsFilled = (emailVal != "") &&
-        (nameVal != "") &&
-        (subjectVal != "") &&
-        (messageVal != "");
-    if (requiredIsFilled) {
-        obj.email = emailVal;
-        obj.name = nameVal;
-        obj.subject = subjectVal;
-        obj.message = messageVal;
-        if (phoneVal != "") {
-            obj.phone = phoneVal;
+class emailController {
+    constructor() {
+        this.emailJSON = {
+            email: null,
+            phone: null,
+            name: null,
+            company: null,
+            website: null,
+            subject: null,
+            message: null
+        };
+    }
+    resetJSON() {
+        this.emailJSON.email = null;
+        this.emailJSON.phone = null;
+        this.emailJSON.name = null;
+        this.emailJSON.company = null;
+        this.emailJSON.website = null;
+        this.emailJSON.subject = null;
+        this.emailJSON.message = null;
+    }
+    setJSON() {
+        var emailVal = $('#email').val();
+        var nameVal = $('#name').val();
+        var subjectVal = $('#subject').val();
+        var phoneVal = $('#phone').val();
+        var messageVal = $('#message').val();
+        var companyVal = $('#company').val();
+        var websiteVal = $('#website').val();
+        var requiredIsFilled = (emailVal != "") &&
+            (nameVal != "") &&
+            (subjectVal != "") &&
+            (messageVal != "");
+        if (requiredIsFilled) {
+            this.emailJSON.email = emailVal;
+            this.emailJSON.name = nameVal;
+            this.emailJSON.subject = subjectVal;
+            this.emailJSON.message = messageVal;
+            if (phoneVal != "") {
+                this.emailJSON.phone = phoneVal;
+            }
+            if (companyVal != "") {
+                this.emailJSON.company = companyVal;
+            }
+            if (websiteVal != "") {
+                this.emailJSON.website = websiteVal;
+            }
         }
-        if (companyVal != "") {
-            obj.company = companyVal;
-        }
-        if (websiteVal != "") {
-            obj.website = websiteVal;
-        }
+        return this.emailJSON;
+    }
+    sendEmail() {
+        this.resetJSON();
+        this.setJSON();
         $('#submit').prop('disabled', true);
+        $.ajax({
+            method: "POST",
+            data: this.emailJSON,
+            success: function (data) {
+                $('#submit').prop('disabled', false);
+            },
+            error: function (jqXHR, textStatus, errorThrown) {
+            }
+        });
     }
 }
-function resetContacts(obj) {
-    obj.email = null;
-    obj.phone = null;
-    obj.name = null;
-    obj.company = null;
-    obj.website = null;
-    obj.subject = null;
-    obj.message = null;
-}
 $(document).ready(function () {
-    var contactObj = {
-        email: null,
-        phone: null,
-        name: null,
-        company: null,
-        website: null,
-        subject: null,
-        message: null
-    };
-    //var contactdata = new dataObj();
+    var emailControl = new emailController;
     $('#submit').click(function () {
-        setContacts(contactObj);
-        console.log(contactObj);
+        emailControl.sendEmail();
     });
 });

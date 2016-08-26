@@ -5,22 +5,37 @@ var email = require('../protected/smtpTransport');
 var smtpTransport = email.smtpTransport;
 
 var mailOptions = {
-    from: '"Fred Foo 👥" <foo@blurdybloop.com>', // sender address 
-    to: 'bar@blurdybloop.com, baz@blurdybloop.com', // list of receivers 
-    subject: 'Hello ✔', // Subject line 
-    text: 'Hello world 🐴', // plaintext body 
-    html: '<b>Hello world 🐴</b>' // html body 
+    from: '"Portfolio server" <turkingk.server@gmail.com>', // sender address 
+    to: 'Turkingtonkevin@gmail.com', // list of receivers 
+    subject: 'test', // Subject line 
+    html: '<b>NULL</b>' // html body 
 };
 
 
+
+
+function setupMailOptions(data) {
+    mailOptions.subject = data.subject;
+    mailOptions.html =
+        '<b> Sender Name:</b><p> ' + data.name + '</p>' +
+        '<b> Email:</b><p>  ' + data.email + '</p>' +
+        '<b> Phone:</b><p> ' + data.phone + '</p>' +
+        '<b> company:</b><p> ' + data.company + '</p>' +
+        '<b> website:</b><p> ' + data.website + '</p>' +
+        '<b> message:</b><p> ' + data.message + '</p>';
+}
+
 /* GET home page. */
 router.post('/', function (req, res) {
-    smtpTransport.sendMail(mailOptions, function (error, info) {
-        if (error) {
-            return console.log(error);
-        }
-        console.log('Message sent: ' + info.response);
-    });
+    console.log(req.body);
+    //setupMailOptions(req.body);
+    //smtpTransport.sendMail(mailOptions, function (error, info) {
+    //    if (error) {
+    //        return console.log(error);
+    //    }
+    //    console.log('Message sent: ' + info.response);
+    //    return console.log(info);
+    //});
 });
 
 module.exports = router;

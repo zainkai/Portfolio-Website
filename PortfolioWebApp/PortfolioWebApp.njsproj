@@ -95,6 +95,7 @@
     <Folder Include="typings\globals\jquery\" />
     <Folder Include="typings\globals\mime\" />
     <Folder Include="typings\globals\morgan\" />
+    <Folder Include="typings\globals\nodemailer-ses-transport\" />
     <Folder Include="typings\globals\nodemailer\" />
     <Folder Include="typings\globals\node\" />
     <Folder Include="typings\globals\qs\" />
@@ -117,6 +118,7 @@
     <TypeScriptCompile Include="typings\globals\jquery\index.d.ts" />
     <TypeScriptCompile Include="typings\globals\mime\index.d.ts" />
     <TypeScriptCompile Include="typings\globals\morgan\index.d.ts" />
+    <TypeScriptCompile Include="typings\globals\nodemailer-ses-transport\index.d.ts" />
     <TypeScriptCompile Include="typings\globals\nodemailer\index.d.ts" />
     <TypeScriptCompile Include="typings\globals\node\index.d.ts" />
     <TypeScriptCompile Include="typings\globals\qs\index.d.ts" />

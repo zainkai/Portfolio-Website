@@ -10,6 +10,7 @@
 /// <reference path="globals/mime/index.d.ts" />
 /// <reference path="globals/morgan/index.d.ts" />
 /// <reference path="globals/node/index.d.ts" />
+/// <reference path="globals/nodemailer-ses-transport/index.d.ts" />
 /// <reference path="globals/nodemailer/index.d.ts" />
 /// <reference path="globals/qs/index.d.ts" />
 /// <reference path="globals/serve-favicon/index.d.ts" />
