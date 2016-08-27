@@ -10,11 +10,8 @@ var mailOptions = {
     from: '"Portfolio server" <turkingk.server@gmail.com>', // sender address 
     to: 'Turkingtonkevin@gmail.com', // list of receivers 
     subject: 'test', // Subject line 
-    html: '<b>NULL</b>' // html body 
+    html: '<h1>N/A</h1>' // html body 
 };
-
-
-
 
 function setupMailOptions(data) {
     mailOptions.subject = data.subject;
@@ -29,7 +26,12 @@ function setupMailOptions(data) {
 }
 
 /* GET home page. */
-router.post('/', urlencodedParser,function (req, res) {
+router.post('/', urlencodedParser, function (req, res) {
+    //res.status(200).send({
+    //    header: "test data!",
+    //    message: "test test test"
+    //});
+
     setupMailOptions(req.body);
     smtpTransport.sendMail(mailOptions, function (error, info) {
         if (error) {
@@ -37,7 +39,10 @@ router.post('/', urlencodedParser,function (req, res) {
             console.log(error);
         }
         else {
-            res.sendStatus(200);
+            res.status(200).send({
+                header: "Success!",
+                message: "Your Email was Sent."
+            });
             console.log('Message sent: ' + info.response);
         }
     });

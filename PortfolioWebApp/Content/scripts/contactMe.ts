@@ -6,6 +6,9 @@
 
 class emailController {
     emailJSON: any;
+    successNotification: any;
+    failureNotification: any;
+
     constructor() {
         this.emailJSON = {
             email: null,
@@ -17,6 +20,14 @@ class emailController {
             message: null
         }
     }
+    setModalText(label:string,bodytext:string) {
+        var labelElement = $('#ModalLabel');
+        var bodyElement = $('.modal-body > h3');
+
+        labelElement.text(label);
+        bodyElement.text(bodytext);
+    }
+
     resetJSON() {
         this.emailJSON.email = null;
         this.emailJSON.phone = null;
@@ -58,7 +69,55 @@ class emailController {
         }
         return this.emailJSON;
     }
+    showModal() {
+        $('#modal-container').modal('show');
+    }
+
+    validateForm():boolean {
+        var email:any = $('#email');
+        var name:any = $('#name');
+        var subject:any = $('#subject');
+        var message: any = $('#message');
+
+        var hasWarning: boolean = false;
+
+        if (email.val().length > 0 && email.val().indexOf('@') > -1) {
+            email.parent().removeClass('has-warning');
+        }
+        else {
+            email.parent().addClass('has-warning');
+            hasWarning = true;
+        }
+
+        if (name.val().length > 0) {
+            name.parent().removeClass('has-warning');
+        }
+        else {
+            name.parent().addClass('has-warning');
+            hasWarning = true;
+        }
+
+        if (subject.val().length > 0) {
+            subject.parent().removeClass('has-warning');
+        }
+        else {
+            subject.parent().addClass('has-warning');
+            hasWarning = true;
+        }
+
+        if (message.val().length > 0) {
+            message.parent().removeClass('has-warning');
+        }
+        else {
+            message.parent().addClass('has-warning');
+            hasWarning = true;
+        }
+
+        return hasWarning;
+    }
+
     sendEmail() {
+        var classScope:this = this;
         this.resetJSON();
         this.setJSON();
         $('#submit').prop('disabled', true);
@@ -66,22 +125,38 @@ class emailController {
             method: "POST",
             data: this.emailJSON,
             success: function (data) {
+                console.log((data.message));
+                classScope.setModalText(data.header,data.message);
+                classScope.showModal();
                 $('#submit').prop('disabled', false);
+                
                 
             },
             error: function (jqXHR, textStatus, errorThrown) {
-                alert('Error:' + jqXHR + textStatus + errorThrown);
+                classScope.setModalText('Failure!', 'Your Email was not sent to the server! Please send your email manually to TurkingtonKevin@gmail.com');
+                classScope.showModal();
+                $('#submit').prop('disabled', false);
+                //alert('Error:' + jqXHR + textStatus + errorThrown);
             }
         });
     }
 
 }
 
+
 $(document).ready(function () {
     var emailControl = new emailController;
 
     $('#submit').click(function () {
-        emailControl.sendEmail();
+        $('#modal-container').modal('show');
+        if (emailControl.validateForm()) {
+            emailControl.setModalText('Invalid Inputs!', 'Please enter valid information for the red text fields.');
+            emailControl.showModal();
+        }
+        else {
+            emailControl.sendEmail();
+        }
+        
     });
 
 });
