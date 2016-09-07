@@ -75,20 +75,15 @@
         <!-- /.row -->
 		<div class="col-lg-12" style="padding-bottom:30px; border-bottom:1px solid #e6e6e6">
 			<center>
-			   <div class="col-md-5">
-					<h2>Linkedin</h2>
-					<a href="https://www.linkedin.com/in/kevin-turkington-b211a798">
-					<img src="images/media_images/linkedin.png" alt="My linkedin page" style="width:70%">
-					</a>
-			   </div>
-			   <div class="col-md-5">
-					<h2>Github</h2>
-					<a href="https://github.com/zainkai">
-					<img src="images/media_images/github.png" alt="My Github page" style="width:70%">
-					</a>
-			   </div>
-			</center>
-		</div>
+                <% var data = data %>
+                <% for(var i = 0; i < data.length ;i++){ %>
+                <div class="col-md-5">
+                    <h2><%= data[i].description %></h2>
+                    <a href="<%= data[i].Link %>">
+                    <img src="<%= data[i].img %>" alt="<%= data[i].description %>" style="width:70%">
+                    </a>
+                </div>
+                <% } %>
         <!-- Footer -->
         <footer>
             <div class="row">

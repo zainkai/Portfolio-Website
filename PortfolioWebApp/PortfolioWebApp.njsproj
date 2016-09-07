@@ -57,6 +57,14 @@
     <Content Include="Content\images\media_images\github.png" />
     <Content Include="Content\images\media_images\linkedin.png" />
     <Content Include="Content\images\profile.jpg" />
+    <Content Include="Content\images\projects\asme\asme.png" />
+    <Content Include="Content\images\projects\asme\osu.png" />
+    <Content Include="Content\images\projects\asme\shell1.jpeg" />
+    <Content Include="Content\images\projects\i3\Capture1.PNG" />
+    <Content Include="Content\images\projects\i3\Capture2.PNG" />
+    <Content Include="Content\images\projects\i3\logo.png" />
+    <Content Include="Content\images\projects\portfolioWebsite\Capture1.PNG" />
+    <Content Include="Content\images\projects\portfolioWebsite\Capture2.PNG" />
     <Content Include="Content\images\projects\portfolioWebsite\portfolioProjects.PNG" />
     <Content Include="Content\resumePDF\resume.pdf" />
     <Content Include="package.json" />
@@ -76,6 +84,8 @@
     <Folder Include="Content\images\media_images\" />
     <Folder Include="Content\css\" />
     <Folder Include="Content\images\projects\" />
+    <Folder Include="Content\images\projects\asme\" />
+    <Folder Include="Content\images\projects\i3\" />
     <Folder Include="Content\images\projects\portfolioWebsite\" />
     <Folder Include="Content\images\projects\test\" />
     <Folder Include="Content\resumePDF\" />
