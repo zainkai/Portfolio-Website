@@ -17,6 +17,9 @@ var email = require('./routes/email');
 //protected route definitions
 var smtpTransport = require('./protected/smtpTransport');
 
+//uncomment for production server
+app.set('port', process.env.PORT || 8000);
+
 //email setup
 app.use('/contactMe', email);
 
